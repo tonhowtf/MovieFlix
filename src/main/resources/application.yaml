@@ -4,7 +4,7 @@ spring:
 
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/movieflix
+    url: jdbc:postgresql://localhost:5431/movieflix
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -12,6 +12,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
+
 
   flyway:
     enabled: true
