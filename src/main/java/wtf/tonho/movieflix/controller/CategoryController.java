@@ -10,6 +10,7 @@ import wtf.tonho.movieflix.repository.CategoryRepository;
 import wtf.tonho.movieflix.service.CategoryService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/movieflix/category")
@@ -28,5 +29,21 @@ public class CategoryController {
     public Category saveCategory(@RequestBody Category category) {
         return categoryService.saveCategory(category);
     }
+
+    @GetMapping("/{id}")
+    public Category getByCategory(@PathVariable Long id) {
+       Optional<Category> category = categoryService.findById(id);
+       if(category.isPresent()) {
+           return category.get();
+       }
+       return null;
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteByCategoryId(@PathVariable Long id) {
+        categoryService.deleteByCategoryId(id);
+    }
+
+
 
 }
