@@ -1,4 +1,4 @@
 package wtf.tonho.movieflix.controller.request;
 
-public class CategoryRequest {
+public record CategoryRequest(String name) {
 }
